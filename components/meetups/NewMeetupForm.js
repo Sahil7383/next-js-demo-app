@@ -1,6 +1,5 @@
 import { useRef } from "react";
-// import { useRouter } from "next/router";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
@@ -28,7 +27,6 @@ function NewMeetupForm(props) {
     };
 
     props.onAddMeetup(meetupData);
-    // router.push("/");
   }
 
   return (
@@ -56,9 +54,7 @@ function NewMeetupForm(props) {
           ></textarea>
         </div>
         <div className={classes.actions}>
-          <Link href="/">
-            <button>Add Meetup</button>
-          </Link>
+          <button onClick={() => router.push("/")}>Add Meetup</button>
         </div>
       </form>
     </Card>
